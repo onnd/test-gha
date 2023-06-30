@@ -1,0 +1,18 @@
+name: pull-request-on-master
+run-name: Terraform plan on pull request on master branch
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tf_plan:
+    permissions:
+      contents: read
+      id-token: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: checkout
+        name: Checkout repository
