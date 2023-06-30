@@ -18,4 +18,8 @@ jobs:
         name: Checkout repository
         uses: actions/checkout@v3
 
-      - run: echo "Test printout"
+      - name: Print variable
+        run: echo ${{ env.TEST_VARIABLE }}
+
+      - name: Print secret
+        run: echo ${{ secret.TEST_VARIABLE }}
