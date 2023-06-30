@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  SEC: ${{ secrets.TEST_SECRET }}
+
 jobs:
   tf_plan:
     permissions:
@@ -22,8 +25,8 @@ jobs:
         run: echo ${{ vars.TEST_VARIABLE }}
 
       - name: Print secret
-        run: echo ${{ secrets.TEST_SECRET }}
+        run: echo ${{ env.SEC }}
 
       - name: Is secret there
-        if: ${{ secrets.TEST_SECRET == 'Secret text' }}
+        if: ${{ env.SEC == 'Secret text' }}
         run: echo "Yes we see the secret"
