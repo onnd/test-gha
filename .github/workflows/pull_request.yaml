@@ -16,3 +16,6 @@ jobs:
     steps:
       - id: checkout
         name: Checkout repository
+        uses: actions/checkout@v3
+
+      - run: echo "Test printout"
