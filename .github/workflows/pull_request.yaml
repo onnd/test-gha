@@ -30,3 +30,7 @@ jobs:
       - name: Is secret there
         if: ${{ env.SEC == 'Secret text' }}
         run: echo "Yes we see the secret"
+
+      - name: Check secret again
+        if: ${{ env.SEC == 'Secret tuxt' }}
+        run: echo "Secret is tuxt"
